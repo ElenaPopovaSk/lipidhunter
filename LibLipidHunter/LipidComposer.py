@@ -38,12 +38,13 @@ class LipidComposer:
         pip_hg_elem = {'C': 6, 'H': 14, 'O': 12, 'P': 2, 'N': 0}
         ps_hg_elem = {'C': 3, 'H': 8, 'O': 6, 'P': 1, 'N': 1}
         tg_hg_elem = {'C': 0, 'H': 0, 'O': 0, 'P': 0, 'N': 0}
+        sm_hg_elem = {'C': 5, 'H': 14, 'O': 4, 'P': 1, 'N': 1}
+        self.lipid_hg_lst = ['PA', 'PC', 'PE', 'PG', 'PI', 'PS', 'PIP', 'TG', 'SM']
 
-        self.lipid_hg_lst = ['PA', 'PC', 'PE', 'PG', 'PI', 'PS', 'PIP', 'TG']
 
         self.lipid_hg_elem_dct = {'PA': pa_hg_elem, 'PC': pc_hg_elem, 'PE': pe_hg_elem, 'PG': pg_hg_elem,
                                   'PI': pi_hg_elem, 'PS': ps_hg_elem, 'PIP': pip_hg_elem, 'TG': tg_hg_elem,
-                                  'DG': tg_hg_elem}
+                                  'DG': tg_hg_elem, 'SM':sm_hg_elem}
 
         self.glycerol_bone_elem_dct = {'C': 3, 'H': 2}
         self.link_o_elem_dct = {'O': -1, 'H': 2}
@@ -118,6 +119,13 @@ class LipidComposer:
                 cl_fa4_lst = cl_fa4_df['FATTYACID'].tolist()
 
                 sn_units_lst = [cl_fa1_lst, cl_fa2_lst, cl_fa3_lst, cl_fa4_lst]
+                 
+         elif lipid_class in ['SM']:
+            if 'SM' in header_lst and 'FATTYACID' in header_lst:
+
+                sm_fa2_df = fa_df.query('SM == "T" and FA2 == "T"')
+                sm_fa2_lst = sm_fa1_df['FATTYACID'].tolist()
+                sn_units_lst = [sm_fa2_lst]
 
         return sn_units_lst
 
