@@ -277,7 +277,7 @@ class LipidComposer:
 
         fa_units_lst = self.calc_fa_df(lipid_class, usr_fa_df)
 
-        if lipid_class in ['PA', 'PC', 'PE', 'PG', 'PI', 'PS', 'DG', 'SM'] and len(fa_units_lst) == 2:
+        if lipid_class in ['PA', 'PC', 'PE', 'PG', 'PI', 'PS', 'DG'] and len(fa_units_lst) == 2:
             fa_comb_lst = list(itertools.product(fa_units_lst[0], fa_units_lst[1]))
             fa_df_header_lst = ['FA1', 'FA2']
             # lipid_template = '{}'
@@ -291,6 +291,9 @@ class LipidComposer:
         elif lipid_class == 'CL' and len(fa_units_lst) == 4:
             fa_comb_lst = list(itertools.product(fa_units_lst[0], fa_units_lst[1], fa_units_lst[2], fa_units_lst[3]))
             fa_df_header_lst = ['FA1', 'FA2', 'FA3', 'FA4']
+        elif lipid_class=='SM' and len(fa_units_lst) == 1:
+            fa_comb_lst = list(itertools.product(fa_units_lst[0]))
+            fa_df_header_lst = ['FA2']
         else:
             fa_comb_lst = []
             fa_df_header_lst = []
