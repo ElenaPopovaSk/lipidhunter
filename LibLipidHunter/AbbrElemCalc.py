@@ -43,7 +43,7 @@ class ElemCalc:
                                   'PI': pi_hg_elem, 'PS': ps_hg_elem, 'PIP': pip_hg_elem,
                                   'LPA': pa_hg_elem, 'LPC': pc_hg_elem, 'LPE': pe_hg_elem, 'LPG': pg_hg_elem,
                                   'LPI': pi_hg_elem, 'LPS': ps_hg_elem, 'LPIP': pip_hg_elem,
-                                  'TG': self.gen_hg_elem,'FA': self.gen_hg_elem, 'DG': self.gen_hg_elem, 'Cer': self.gen_hg_elem}
+                                  'TG': self.gen_hg_elem,'FA': self.gen_hg_elem, 'DG': self.gen_hg_elem, 'Cer': self.gen_hg_elem, 'SM': pc_hg_elem}
         self.lipid_hg_elem_dct2 = {'PA': [pa_hg_elem, pl_elem_gen], 'PC': [pc_hg_elem, pl_elem_gen],
                                    'PE': [pe_hg_elem, pl_elem_gen], 'PG': [pg_hg_elem, pl_elem_gen],
                                   'PI': [pi_hg_elem, pl_elem_gen], 'PS': [ps_hg_elem, pl_elem_gen],
@@ -52,7 +52,7 @@ class ElemCalc:
                                    'LPG': [pg_hg_elem, lpl_elem_gen], 'LPI': [pi_hg_elem, lpl_elem_gen],
                                    'LPS': [ps_hg_elem, lpl_elem_gen], 'LPIP': [pip_hg_elem, lpl_elem_gen],
                                   'TG': [self.gen_hg_elem, tg_elem_gen], 'FA': [self.gen_hg_elem, fa_elem_gen],
-                                   'DG': [self.gen_hg_elem, dg_elem_gen], 'Cer': [self.gen_hg_elem, cer_elem_gen]}
+                                   'DG': [self.gen_hg_elem, dg_elem_gen], 'Cer': [self.gen_hg_elem, cer_elem_gen], 'SM': [pc_hg_elem, pl_elem_gen]}
 
         self.glycerol_bone_elem_dct = {'C': 3, 'H': 2}
         # Note: will be deleted (georgia: 14.2.2019)
@@ -87,11 +87,12 @@ class ElemCalc:
         fa_3_link_dct = {'A-': ['A-A-A-', {'A': ''}],
                          'O-': ['O-A-A-', {'O': '', 'A':'O-'}],
                          'P-': ['P-A-A-', {'P': '', 'A':'P-'}]}
+        fa_1a_link_dct = {'A-': ['A-', {'A': ''}]}
         self.lipid_link_dct = {'PL': fa_2_link_dct, 'PA': fa_2_link_dct, 'PC': fa_2_link_dct, 'PE': fa_2_link_dct,
                                'PG':fa_2_link_dct, 'PI': fa_2_link_dct, 'PIP':fa_2_link_dct, 'PS': fa_2_link_dct,
                                'LPL': fa_1_link_dct, 'LPA': fa_1_link_dct, 'LPC': fa_1_link_dct, 'LPE': fa_1_link_dct,
                                'LPG': fa_1_link_dct, 'LPI': fa_1_link_dct, 'LPIP': fa_1_link_dct, 'LPS': fa_1_link_dct,
-                               'TG': fa_3_link_dct, 'DG': fa_2_link_dct, "Cer": ''}
+                               'TG': fa_3_link_dct, 'DG': fa_2_link_dct, "Cer": '', 'SM': fa_1a_link_dct}
 
         self.ion_mode_elem = {'[M-H]-': [{'H': -1}, '-'], '[M+FA-H]-': [{'H': 1, 'C': 1, 'O': 2}, '-'],
                               '[M+HCOO]-': [{'H': 1, 'C': 1, 'O': 2}, '-'],
