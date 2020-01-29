@@ -52,7 +52,7 @@ class ElemCalc:
                                    'LPG': [pg_hg_elem, lpl_elem_gen], 'LPI': [pi_hg_elem, lpl_elem_gen],
                                    'LPS': [ps_hg_elem, lpl_elem_gen], 'LPIP': [pip_hg_elem, lpl_elem_gen],
                                   'TG': [self.gen_hg_elem, tg_elem_gen], 'FA': [self.gen_hg_elem, fa_elem_gen],
-                                   'DG': [self.gen_hg_elem, dg_elem_gen], 'Cer': [self.gen_hg_elem, cer_elem_gen]}
+                                   'DG': [self.gen_hg_elem, dg_elem_gen], 'Cer': [self.gen_hg_elem, cer_elem_gen], 'SM': [pc_hg_elem, pl_elem_gen]}
 
         self.glycerol_bone_elem_dct = {'C': 3, 'H': 2}
         # Note: will be deleted (georgia: 14.2.2019)
