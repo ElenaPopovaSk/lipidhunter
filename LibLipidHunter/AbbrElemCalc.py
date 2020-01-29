@@ -43,7 +43,7 @@ class ElemCalc:
                                   'PI': pi_hg_elem, 'PS': ps_hg_elem, 'PIP': pip_hg_elem,
                                   'LPA': pa_hg_elem, 'LPC': pc_hg_elem, 'LPE': pe_hg_elem, 'LPG': pg_hg_elem,
                                   'LPI': pi_hg_elem, 'LPS': ps_hg_elem, 'LPIP': pip_hg_elem,
-                                  'TG': self.gen_hg_elem,'FA': self.gen_hg_elem, 'DG': self.gen_hg_elem, 'Cer': self.gen_hg_elem}
+                                  'TG': self.gen_hg_elem,'FA': self.gen_hg_elem, 'DG': self.gen_hg_elem, 'Cer': self.gen_hg_elem, 'SM': pc_hg_elem}
         self.lipid_hg_elem_dct2 = {'PA': [pa_hg_elem, pl_elem_gen], 'PC': [pc_hg_elem, pl_elem_gen],
                                    'PE': [pe_hg_elem, pl_elem_gen], 'PG': [pg_hg_elem, pl_elem_gen],
                                   'PI': [pi_hg_elem, pl_elem_gen], 'PS': [ps_hg_elem, pl_elem_gen],
