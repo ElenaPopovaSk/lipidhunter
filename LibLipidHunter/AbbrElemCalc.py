@@ -87,11 +87,12 @@ class ElemCalc:
         fa_3_link_dct = {'A-': ['A-A-A-', {'A': ''}],
                          'O-': ['O-A-A-', {'O': '', 'A':'O-'}],
                          'P-': ['P-A-A-', {'P': '', 'A':'P-'}]}
+        fa_1a_link_dct = {'A-': ['A-', {'A': ''}]} #new
         self.lipid_link_dct = {'PL': fa_2_link_dct, 'PA': fa_2_link_dct, 'PC': fa_2_link_dct, 'PE': fa_2_link_dct,
                                'PG':fa_2_link_dct, 'PI': fa_2_link_dct, 'PIP':fa_2_link_dct, 'PS': fa_2_link_dct,
                                'LPL': fa_1_link_dct, 'LPA': fa_1_link_dct, 'LPC': fa_1_link_dct, 'LPE': fa_1_link_dct,
                                'LPG': fa_1_link_dct, 'LPI': fa_1_link_dct, 'LPIP': fa_1_link_dct, 'LPS': fa_1_link_dct,
-                               'TG': fa_3_link_dct, 'DG': fa_2_link_dct, "Cer": ''}
+                               'TG': fa_3_link_dct, 'DG': fa_2_link_dct, "Cer": '', 'SM': fa_1a_link_dct}
 
         self.ion_mode_elem = {'[M-H]-': [{'H': -1}, '-'], '[M+FA-H]-': [{'H': 1, 'C': 1, 'O': 2}, '-'],
                               '[M+HCOO]-': [{'H': 1, 'C': 1, 'O': 2}, '-'],
